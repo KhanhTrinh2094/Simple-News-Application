@@ -1,7 +1,6 @@
 var userModel = require('../models/userModel.js');
 
-var mongoose = require('mongoose'),
-  User = userModel.Schema('Users').model;
+var User = userModel.Schema('Users').model;
 
 exports.list_all_users = function(req, res) {
   User.find({}, function(err, user) {

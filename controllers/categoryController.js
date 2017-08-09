@@ -1,7 +1,5 @@
 var categoryModel = require('../models/categoryModel.js');
-
-var mongoose = require('mongoose'),
-  Category = categoryModel.Schema('Categories').model;
+var Category = categoryModel.Schema('Categories').model;
 
 exports.list_all_categories = function(req, res) {
   Category.find({}, function(err, category) {
