@@ -1,5 +1,6 @@
 var userModel = require('../models/userModel.js');
 var crypt = require('../utils/crypt.js');
+var config = require('../config');
 var User = userModel.Schema('Users').model;
 var jwt = require('jsonwebtoken');
 
@@ -11,8 +12,13 @@ exports.startMiddleWare = function(req, res, next) {
       if (err) {
         return res.json({ success: false, message: 'Failed to authenticate token.' });    
       } else {
-        req.decoded = decoded;  
-        next();
+        User.findOne({ username: decoded.u }, function(err, userInfo){
+          if (err || !userInfo)
+            return res.json({ success: false, message: 'Cannot find username' });
+
+          req.user = userInfo;
+          next();
+        });
       }
     });
   } else {
@@ -24,7 +30,7 @@ exports.startMiddleWare = function(req, res, next) {
 }
 
 exports.authenticate = function(req, res){
-	var mdPassword = crypt.md5(req.body.password);
+  var mdPassword = crypt.md5(req.body.password);
     var queryObj = {
       username: req.body.username,
       password: mdPassword
@@ -32,16 +38,16 @@ exports.authenticate = function(req, res){
 
     User.findOne(queryObj, function(err, userInfo){
       if (err) throw err;
-      
+
       if(userInfo){
-        var token = jwt.sign(userInfo, config.session_secret, {
-          expiresIn: 86400
+        var token = jwt.sign({ u: userInfo.username }, config.session_secret, {
+          expiresIn: '1d'
         });
 
         res.json({
-            success: true,
-            token: token
-          });
+          success: true,
+          token: token
+        });
       } else
         res.json({ success: false, message: 'Authentication failed.' });
     });
