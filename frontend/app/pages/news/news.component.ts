@@ -1,0 +1,90 @@
+import { Component, OnInit, NgZone } from '@angular/core';
+import { Router } from '@angular/router';
+import { WindowRef, Notification, LoadingIndicatorService, NewsService, Config } from 'raven.index';
+
+@Component({
+  moduleId: module.id,
+  selector: 'raven-news',
+  templateUrl: './news.component.html'
+})
+export class NewsComponent implements OnInit {
+  datatableInstance: any;
+
+  constructor(
+    private zone: NgZone,
+    private router: Router,
+    private windowRef: WindowRef,
+    private _loadingSvc: LoadingIndicatorService,
+    private newsService: NewsService
+  ) {
+    windowRef.nativeWindow.angularComponentRefer = {
+      zone: this.zone,
+      componentFn: (value: any) => this.removeItem(value),
+      component: this
+    };
+  }
+
+  ngOnInit() {
+    this.datatableInstance = (<any>$('#datatable-example')).dataTable({
+      "processing": true,
+      "serverSide": true,
+      "responsive": true,
+      "columns": [
+        { "data": "_id" },
+        { "data": "title" },
+        { "data": "thumbnail" },
+        { "data": "category" },
+        { "data": "author" },
+      ],
+      "columnDefs": [ 
+        {
+          "render": function(row: any, type: any, val: any, meta: any) {
+            return `<a onclick="routeLink('news/${val._id}');">
+              <button class="btn btn-primary">Update</button>
+            </a> 
+            <a onclick="removeItem('${val._id}');">
+              <button class="btn btn-danger">Delete</button>
+            </a>`;
+          },
+          "targets": 3,
+          "orderable": false,
+          "data": "_id",
+        },
+        {
+          "width": "30%",
+          "targets": [1,2]
+        },
+        {
+          "width": "10%",
+          "targets": [3]
+        } 
+      ],
+      "ajax": {
+        "url": Config.ApiUrl + 'news/data_table',
+        "data": function ( d:any ) {
+            d["x-access-token"] = localStorage.getItem("auth_token");
+        }
+      }
+    });
+    $('.dataTables_filter input').attr("placeholder", "Search...");
+  }
+
+  removeItem(id: string) {
+    Notification.notyConfirmMessage("Are you sure you want to delete this news ?", () => {
+      this._loadingSvc.setValue(true);
+      this.newsService.delete(id).then(() => {
+
+        Notification.notySuccessMessage("Successfully deleted news with ID: " + id);
+        this._loadingSvc.setValue(false);
+        this.router.navigateByUrl('/news');
+        this.datatableInstance.fnDraw();
+      }).catch(() => {
+
+        this._loadingSvc.setValue(false);
+        Notification.notyErrorMessage("This news could not deleted.");
+
+      });
+
+    });
+  }
+}

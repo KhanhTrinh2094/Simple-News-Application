@@ -1,0 +1,25 @@
+{
+  "name": "news",
+  "version": "1.0.0",
+  "description": "no description",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "development": "nodemon app.js",
+    "test": "SET NODE_ENV=test nodemon app.js",
+    "product": "SET NODE_ENV=test nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "crypto": "0.0.3",
+    "express": "^4.15.3",
+    "jsonwebtoken": "^7.4.2",
+    "mongoose": "^4.11.5",
+    "mongoose-datatable": "^1.0.6"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
