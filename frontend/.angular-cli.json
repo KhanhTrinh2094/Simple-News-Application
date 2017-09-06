@@ -39,7 +39,6 @@
 		"assets/widgets/datatable/datatable-bootstrap.js",
 		"assets/widgets/datatable/datatable-tabletools.js",
 		"assets/widgets/datatable/datatable-responsive.js",
-		"assets/ckeditor/ckeditor.js",
 		"assets/widgets/jgrowl-notifications/jgrowl.js",
 		"assets/widgets/noty-notifications/noty.js"
 	  ],
