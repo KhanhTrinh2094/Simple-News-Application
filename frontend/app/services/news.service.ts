@@ -55,12 +55,25 @@ export class NewsService {
       .catch(this.handleError);
   }
 
-  update(news: News): Promise<News> {
+  update(news: News, files:File): Promise<News> {
     const url = `${this.newsUrl}/${news._id}/`;
+    let formData: FormData = new FormData();
+    if(files)
+      formData.append("thumbnail", files[0], files[0].name);
+
+    for (var property in news) {
+      if (news.hasOwnProperty(property)) {
+        if(typeof news[property] == 'object')
+          formData.append(property, news[property]._id);
+        else
+          formData.append(property, news[property]);
+      }
+    }
+
     return this.http
-      .put(url, news)
+      .putWithFile(url, formData)
       .toPromise()
-      .then(() => news)
+      .then(response => response as News)
       .catch(this.handleError);
   }
   

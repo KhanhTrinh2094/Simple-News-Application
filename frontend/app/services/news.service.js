@@ -53,12 +53,23 @@ let NewsService = class NewsService {
             .then(response => response)
             .catch(this.handleError);
     }
-    update(news) {
+    update(news, files) {
         const url = `${this.newsUrl}/${news._id}/`;
+        let formData = new FormData();
+        if (files)
+            formData.append("thumbnail", files[0], files[0].name);
+        for (var property in news) {
+            if (news.hasOwnProperty(property)) {
+                if (typeof news[property] == 'object')
+                    formData.append(property, news[property]._id);
+                else
+                    formData.append(property, news[property]);
+            }
+        }
         return this.http
-            .put(url, news)
+            .putWithFile(url, formData)
             .toPromise()
-            .then(() => news)
+            .then(response => response)
             .catch(this.handleError);
     }
     handleError(error) {

@@ -54,4 +54,5 @@ export { CategoryComponent}		 				from './pages/category/category.component';
 export { AddCategoryComponent}		 				from './pages/category/add-category.component';
 export { UpdateCategoryComponent}           from './pages/category/update-category.component';
 export { NewsComponent}           from './pages/news/news.component';
-export { AddNewsComponent}	 				from './pages/news/add-news.component';
+export { AddNewsComponent}           from './pages/news/add-news.component';
+export { UpdateNewsComponent}	 				from './pages/news/update-news.component';

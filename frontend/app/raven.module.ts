@@ -24,7 +24,7 @@ import {
 	AddCategoryComponent, UpdateCategoryComponent,
 	CategoryService, ChangePasswordComponent,
 	NewsComponent, AddNewsComponent,
-	MonarchUI, NewsService,
+	MonarchUI, NewsService, UpdateNewsComponent,
 	AuthService, HttpClient, WindowRef
 } from './raven.index'
 
@@ -48,7 +48,7 @@ import {
 		AddUserComponent, CategoryComponent,
 		AddCategoryComponent, UpdateCategoryComponent,
 		ChangePasswordComponent, UpdateProfileComponent,
-		NewsComponent, AddNewsComponent
+		NewsComponent, AddNewsComponent, UpdateNewsComponent
 	],
 	providers: [
 		MonarchUI, Notification,

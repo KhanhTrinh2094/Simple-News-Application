@@ -11,7 +11,7 @@ import {
 	UserComponent, UpdateUserComponent,
 	AddUserComponent, CategoryComponent,
 	AddCategoryComponent, UpdateCategoryComponent,
-	NewsComponent, AddNewsComponent
+	NewsComponent, AddNewsComponent, UpdateNewsComponent
 } 		from 'raven.index';
 
 
@@ -30,6 +30,7 @@ const routes: Routes = [
 			{ path: 'category/:id', component: UpdateCategoryComponent, canActivate: [AuthGuard] },
 			{ path: 'news', component: NewsComponent, canActivate: [AuthGuard] },
 			{ path: 'news/add-new', component: AddNewsComponent, canActivate: [AuthGuard] },
+			{ path: 'news/:id', component: UpdateNewsComponent, canActivate: [AuthGuard] },
 			{ path: '', component: HeaderComponent, outlet: 'header' },
 			{ path: '', component: SidebarComponent, outlet: 'sidebar' },
 		]

@@ -45,10 +45,21 @@ exports.read_a_news = function(req, res) {
 };
 
 exports.update_a_news = function(req, res) {
-  News.findOneAndUpdate({_id: req.params.newsId}, req.body, {new: true}, function(err, news) {
-    if (err)
-      res.status(500).send(err);
-    res.json(news);
+  var form = new formidable.IncomingForm();
+  form.uploadDir = config.upload_path;
+  form.keepExtensions = true;
+
+  form.parse(req, function(err, fields, files) {
+    var new_news = new News(fields);
+    if(files.thumbnail){
+      var thumb_name = files.thumbnail.path.split("\\").pop();
+      new_news.thumbnail = thumb_name;
+    }
+    News.findOneAndUpdate({_id: req.params.newsId}, new_news, {new: true}, function(err, news) {
+      if (err)
+        res.status(500).send(err);
+      res.json(news);
+    });
   });
 };
 

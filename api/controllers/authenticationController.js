@@ -26,28 +26,27 @@ exports.setupHeaderMiddleWare = function(req, res, next) {
 }
 
 exports.startMiddleWare = function(req, res, next) {
-  next();
-  // var token = req.headers['x-access-token'] || req.query['x-access-token'];
+  var token = req.headers['x-access-token'] || req.query['x-access-token'];
 
-  // if (token) {
-  //   jwt.verify(token, config.session_secret, function(err, decoded) {      
-  //     if (err)
-  //       return res.json({ success: false, message: 'Failed to authenticate token.' });    
+  if (token) {
+    jwt.verify(token, config.session_secret, function(err, decoded) {      
+      if (err)
+        return res.json({ success: false, message: 'Failed to authenticate token.' });    
       
-  //     User.findOne({ username: decoded.u }, function(err, userInfo){
-  //       if (err || !userInfo)
-  //         return res.json({ success: false, message: 'Cannot find username' });
+      User.findOne({ username: decoded.u }, function(err, userInfo){
+        if (err || !userInfo)
+          return res.json({ success: false, message: 'Cannot find username' });
 
-  //       req.user = userInfo;
-  //       next();
-  //     });
-  //   });
-  // } else {
-  //   return res.status(403).send({ 
-  //     success: false, 
-  //     message: 'No token provided.'
-  //   });
-  // }
+        req.user = userInfo;
+        next();
+      });
+    });
+  } else {
+    return res.status(403).send({ 
+      success: false, 
+      message: 'No token provided.'
+    });
+  }
 }
 
 exports.authenticate = function(req, res){

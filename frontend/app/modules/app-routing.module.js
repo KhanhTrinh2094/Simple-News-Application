@@ -23,6 +23,7 @@ const routes = [
             { path: 'category/:id', component: raven_index_1.UpdateCategoryComponent, canActivate: [raven_index_1.AuthGuard] },
             { path: 'news', component: raven_index_1.NewsComponent, canActivate: [raven_index_1.AuthGuard] },
             { path: 'news/add-new', component: raven_index_1.AddNewsComponent, canActivate: [raven_index_1.AuthGuard] },
+            { path: 'news/:id', component: raven_index_1.UpdateNewsComponent, canActivate: [raven_index_1.AuthGuard] },
             { path: '', component: raven_index_1.HeaderComponent, outlet: 'header' },
             { path: '', component: raven_index_1.SidebarComponent, outlet: 'sidebar' },
         ]

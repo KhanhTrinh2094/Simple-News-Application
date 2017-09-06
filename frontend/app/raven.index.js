@@ -93,4 +93,6 @@ var news_component_1 = require("./pages/news/news.component");
 exports.NewsComponent = news_component_1.NewsComponent;
 var add_news_component_1 = require("./pages/news/add-news.component");
 exports.AddNewsComponent = add_news_component_1.AddNewsComponent;
+var update_news_component_1 = require("./pages/news/update-news.component");
+exports.UpdateNewsComponent = update_news_component_1.UpdateNewsComponent;
 //# sourceMappingURL=raven.index.js.map

@@ -36,7 +36,7 @@ RavenModule = __decorate([
             raven_index_1.AddUserComponent, raven_index_1.CategoryComponent,
             raven_index_1.AddCategoryComponent, raven_index_1.UpdateCategoryComponent,
             raven_index_1.ChangePasswordComponent, raven_index_1.UpdateProfileComponent,
-            raven_index_1.NewsComponent, raven_index_1.AddNewsComponent
+            raven_index_1.NewsComponent, raven_index_1.AddNewsComponent, raven_index_1.UpdateNewsComponent
         ],
         providers: [
             raven_index_1.MonarchUI, raven_index_1.Notification,

@@ -61,7 +61,6 @@ export class NewsComponent implements OnInit {
         {
           "render": function(row: any, type: any, val: any, meta: any) {
             var d = new Date(val.created_date);
-            console.log(d);
             return d.getDate() + '/' + d.getMonth() + '/' + d.getFullYear() + ' ' + d.getHours() + ':' + d.getMinutes();
           },
           "targets": 4
