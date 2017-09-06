@@ -14,16 +14,10 @@
 					<span>Add New</span>
 				</a>
 			</li>
-			<li>
-				<a [routerLink]="['/update-profile']" title="Your Profile">
-					<i class="glyph-icon icon-user"></i>
-					<span>Your Profile</span>
-				</a>
-			</li>
 			<li class="header"><span>Category</span></li>
 			<li>
 				<a [routerLink]="['/categories']" title="All Categories">
-					<i class="glyph-icon icon-users"></i>
+					<i class="glyph-icon icon-tags"></i>
 					<span>All Categories</span>
 				</a>
 			</li>
@@ -36,7 +30,7 @@
 			<li class="header"><span>News</span></li>
 			<li>
 				<a [routerLink]="['/news']" title="All News">
-					<i class="glyph-icon icon-calendar"></i>
+					<i class="glyph-icon icon-newspaper-o"></i>
 					<span>All News</span>
 				</a>
 			</li>
@@ -48,40 +42,46 @@
 			</li>
 			<li>
 				<a href="#" title="Today Events">
-					<i class="glyph-icon icon-calendar-o"></i>
-					<span>Today Events</span>
+					<i class="glyph-icon icon-bullhorn"></i>
+					<span>Hot News</span>
+				</a>
+			</li>
+			<li class="header"><span>Profile</span></li>
+			<li>
+				<a [routerLink]="['/update-profile']" title="Your Profile">
+					<i class="glyph-icon icon-user"></i>
+					<span>Update Profile</span>
 				</a>
 			</li>
 			<li>
-				<a href="#" title="Requesting Events">
-					<i class="glyph-icon icon-bell"></i>
-					<span>Requesting Events</span>
-				</a>
-			</li>
-			<li class="header"><span>Ebooks</span></li>
-			<li>
-				<a [routerLink]="['/ebooks']" title="All Ebooks">
-					<i class="glyph-icon icon-file-pdf-o"></i>
-					<span>All Ebooks</span>
+				<a [routerLink]="['/change-password']" title="All News">
+					<i class="glyph-icon icon-calendar"></i>
+					<span>Change Password</span>
 				</a>
 			</li>
 			<li>
-				<a [routerLink]="['/ebook/add-new']" title="Add New">
-					<i class="glyph-icon icon-plus"></i>
-					<span>Add New</span>
+				<a [routerLink]="['/news/add-new']" title="Add New">
+					<i class="glyph-icon icon-sign-out"></i>
+					<span>Logout</span>
 				</a>
 			</li>
-			<li class="header"><span>Media</span></li>
+			<li class="header"><span>More</span></li>
 			<li>
-				<a href="#" title="Library">
-					<i class="glyph-icon icon-picture-o"></i>
-					<span>Library</span>
+				<a [routerLink]="['/403']" title="Your Profile">
+					<i class="glyph-icon icon-warning"></i>
+					<span>403</span>
 				</a>
 			</li>
 			<li>
-				<a href="#" title="Add New">
-					<i class="glyph-icon icon-plus"></i>
-					<span>Add New</span>
+				<a [routerLink]="['/404']" title="Your Profile">
+					<i class="glyph-icon icon-meh-o"></i>
+					<span>404</span>
+				</a>
+			</li>
+			<li>
+				<a [routerLink]="['/500']" title="All News">
+					<i class="glyph-icon icon-flash"></i>
+					<span>500</span>
 				</a>
 			</li>
 		</ul>
