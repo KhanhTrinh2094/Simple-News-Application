@@ -7,7 +7,7 @@ var express = require('express'),
 
 var app = express();
 
-app.set('port', config.port);
+app.set('port', process.env.PORT || config.port);
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: true, keepExtensions: true }));
 app.use(bodyParser.json());
