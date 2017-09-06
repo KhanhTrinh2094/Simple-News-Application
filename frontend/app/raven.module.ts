@@ -4,6 +4,7 @@ import { FormsModule } 							from '@angular/forms';
 import { HttpModule } 							from '@angular/http';
 import { BrowserAnimationsModule } 				from '@angular/platform-browser/animations';
 import { CKEditorModule } 					from 'ng2-ckeditor';
+import * as $ 											from 'jquery';
 
 // Module
 import { AppRoutingModule } 					from './modules/app-routing.module'
@@ -14,7 +15,6 @@ import {
 	SettingComponent, RavenComponent,
 	LoadingIndicatorModule, LoadingIndicatorService,
 	Notification, UpdateProfileComponent,
-
 	NotFoundComponent, DashboardComponent,
 	ForbiddenComponent, ServerErrorComponent,
 	LoginComponent, UserComponent,

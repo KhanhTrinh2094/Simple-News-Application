@@ -5,7 +5,6 @@ import { Router } 					from '@angular/router';
 declare var $: JQueryStatic;
 
 @Component({
-	moduleId: module.id,
 	selector: 'body',
 	templateUrl: './raven.component.html',
 	host: {

@@ -2,7 +2,6 @@ import { Component, OnInit, trigger, state, style, transition, animate } from '@
 import { LoadingIndicatorService } from 'raven.index';
 
 @Component({
-	moduleId: module.id,
 	selector: 'loading-indicator',
 	templateUrl: './loading-indicator.component.html',
 	styleUrls: ['./loading-indicator.component.css'],

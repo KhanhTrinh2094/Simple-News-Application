@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { AuthService, WindowRef, Notification, LoadingIndicatorService, UserService, Config } from 'raven.index';
 
 @Component({
-  moduleId: module.id,
   selector: 'raven-user',
   templateUrl: './user.component.html'
 })

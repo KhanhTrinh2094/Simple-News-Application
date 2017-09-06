@@ -6,7 +6,6 @@ import {
 } 									from 'raven.index';
 
 @Component({
-	moduleId: module.id,
 	selector: 'app-login',
 	templateUrl: './login.component.html'
 })

@@ -8,7 +8,6 @@ import {
 } from 'raven.index';
 
 @Component({
-	moduleId: module.id,
 	selector: 'raven-add-user',
 	templateUrl: './add-user.component.html'
 })

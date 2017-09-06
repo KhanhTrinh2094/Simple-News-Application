@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { WindowRef, Notification, LoadingIndicatorService, NewsService, Config } from 'raven.index';
 
 @Component({
-  moduleId: module.id,
   selector: 'raven-news',
   templateUrl: './news.component.html'
 })

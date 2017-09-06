@@ -2,7 +2,6 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { MonarchUI, AuthService } 		from 'raven.index';
 
 @Component({
-	moduleId: module.id,
 	selector: 'sidebar',
 	templateUrl: './sidebar.component.html',
 })

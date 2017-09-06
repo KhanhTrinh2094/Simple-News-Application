@@ -6,7 +6,6 @@ function routerTransition() {
 }
 
 @Component({
-	moduleId: module.id,
 	selector: 'simple-layout',
 	templateUrl: './simple-layout.component.html',
 	styleUrls: ['./simple-layout.component.css'],

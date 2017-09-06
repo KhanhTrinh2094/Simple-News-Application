@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { WindowRef, Notification, LoadingIndicatorService, CategoryService, Config } from 'raven.index';
 
 @Component({
-  moduleId: module.id,
   selector: 'raven-category',
   templateUrl: './category.component.html'
 })

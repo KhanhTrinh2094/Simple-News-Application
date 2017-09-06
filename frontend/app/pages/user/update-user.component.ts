@@ -9,7 +9,6 @@ import {
 } from 'raven.index';
 
 @Component({
-	moduleId: module.id,
 	selector: 'raven-update-user',
 	templateUrl: './update-user.component.html'
 })

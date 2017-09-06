@@ -8,7 +8,6 @@ import {
 } from 'raven.index';
 
 @Component({
-  moduleId: module.id,
   selector: 'raven-add-category',
   templateUrl: './add-category.component.html'
 })

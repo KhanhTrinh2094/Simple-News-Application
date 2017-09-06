@@ -6,7 +6,6 @@ function routerTransition() {
 }
 
 @Component({
-	moduleId: module.id,
 	selector: 'full-layout',
 	templateUrl: './full-layout.component.html',
 	animations: [routerTransition()],

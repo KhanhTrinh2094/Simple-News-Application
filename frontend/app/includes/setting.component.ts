@@ -1,7 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 
 @Component({
-	moduleId: module.id,
 	selector: 'setting',
 	templateUrl: './setting.component.html',
 })

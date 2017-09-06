@@ -11,7 +11,6 @@ export class DropdownValue {
 }
 
 @Component({
-	moduleId: module.id,
 	selector: 'raven-dropdown',
 	templateUrl: './dropdown.component.html'
 })

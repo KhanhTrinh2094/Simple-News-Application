@@ -9,7 +9,6 @@ import {
 } from 'raven.index';
 
 @Component({
-  moduleId: module.id,
   selector: 'raven-add-news',
   templateUrl: './add-news.component.html'
 })

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Location }               from '@angular/common';
 
 @Component({
-	moduleId: module.id,
 	selector: 'notfound',
 	templateUrl: './404.component.html'
 })

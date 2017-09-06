@@ -5,7 +5,6 @@ import { Location } from '@angular/common';
 import { User, AuthService, UserService, LoadingIndicatorService, Notification } from 'raven.index';
 
 @Component({
-	moduleId: module.id,
 	selector: 'raven-change-password',
 	templateUrl: './change-password.component.html'
 })

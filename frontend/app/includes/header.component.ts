@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { AuthService } from 'raven.index';
 
 @Component({
-	moduleId: module.id,
 	selector: 'header',
 	templateUrl: './header.component.html',
 })

@@ -9,7 +9,6 @@ import {
 } from 'raven.index';
 
 @Component({
-  moduleId: module.id,
   selector: 'raven-update-category',
   templateUrl: './update-category.component.html'
 })
