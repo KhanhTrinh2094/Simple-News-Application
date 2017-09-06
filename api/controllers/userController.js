@@ -1,8 +1,6 @@
 var userModel = require('../models/userModel.js');
 var crypt = require('../utils/crypt.js');
 var User = userModel.Schema('Users').model;
-var mongodb = require('mongodb');
-var MongoClient = mongodb.MongoClient;
 var config = require('../config');
 
 exports.list_all_users = function(req, res) {
