@@ -12,7 +12,7 @@ export class HeaderComponent {
 	userInfo: Object;
 
 	constructor(
-		private authService: AuthService,
+		public authService: AuthService,
 		private router: Router
 	) { 
 		this.userInfo = authService.getUser();

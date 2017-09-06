@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } 	from '@angular/core';
 import { slideToBottom } 		from 'raven.index';
 
-function routerTransition() {
+export function routerTransition() {
 	return slideToBottom();
 }
 

@@ -1,7 +1,7 @@
 import { Component, AfterViewInit, OnInit } from '@angular/core';
 import { slideToLeft } 		from 'raven.index';
 
-function routerTransition() {
+export function routerTransition() {
 	return slideToLeft();
 }
 
