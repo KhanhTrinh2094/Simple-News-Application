@@ -35,11 +35,23 @@ export class NewsService {
       .catch(this.handleError);
   }
 
-  create(news: News): Promise<News> {
+  create(news: News, files:File): Promise<News> {
+    let formData: FormData = new FormData();
+    formData.append("thumbnail", files[0], files[0].name);
+
+    for (var property in news) {
+      if (news.hasOwnProperty(property)) {
+        if(typeof news[property] == 'object')
+          formData.append(property, news[property]._id);
+        else
+          formData.append(property, news[property]);
+      }
+    }
+
     return this.http
-      .post(this.newsUrl + "/", news)
+      .postWithFile(this.newsUrl + "/", formData)
       .toPromise()
-      .then(res => res.json() as News)
+      .then(response => response as News)
       .catch(this.handleError);
   }
 

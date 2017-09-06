@@ -39,7 +39,7 @@ let HttpClient = class HttpClient {
             let xhr = new XMLHttpRequest();
             xhr.onreadystatechange = () => {
                 if (xhr.readyState === 4) {
-                    if (xhr.status === 201) {
+                    if (xhr.status === 200) {
                         observer.next(JSON.parse(xhr.response));
                         observer.complete();
                     }

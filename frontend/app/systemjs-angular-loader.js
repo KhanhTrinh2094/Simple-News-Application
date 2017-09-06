@@ -43,5 +43,3 @@ module.exports.translate = function(load){
 
 	return load;
 };
-
-console.log('sfsdfdsf');

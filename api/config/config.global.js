@@ -10,3 +10,5 @@ config.session_secret = '26w5Mtw3Hn';
 config.root=__dirname;
 config.db = 'mongodb://127.0.0.1:27017/news';
 config.allow_origin = "http://localhost:3000";
+config.upload_path = "./public/uploads";
+config.upload_uri = "uploads";

@@ -36,11 +36,21 @@ let NewsService = class NewsService {
             .then(() => null)
             .catch(this.handleError);
     }
-    create(news) {
+    create(news, files) {
+        let formData = new FormData();
+        formData.append("thumbnail", files[0], files[0].name);
+        for (var property in news) {
+            if (news.hasOwnProperty(property)) {
+                if (typeof news[property] == 'object')
+                    formData.append(property, news[property]._id);
+                else
+                    formData.append(property, news[property]);
+            }
+        }
         return this.http
-            .post(this.newsUrl + "/", news)
+            .postWithFile(this.newsUrl + "/", formData)
             .toPromise()
-            .then(res => res.json())
+            .then(response => response)
             .catch(this.handleError);
     }
     update(news) {

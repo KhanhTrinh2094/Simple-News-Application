@@ -1,5 +1,7 @@
 var newsModel = require('../models/newsModel.js');
 var News = newsModel.Schema('News').model;
+var formidable = require('formidable');
+var config = require('../config');
 
 exports.list_all_news = function(req, res) {
   News.find({}, function(err, news) {
@@ -18,11 +20,19 @@ exports.data_table = function(req, res) {
 };
 
 exports.create_a_news = function(req, res) {
-  var new_news = new News(req.body);
-  new_news.save(function(err, news) {
-    if (err)
-      res.status(500).send(err);
-    res.json(news);
+  var form = new formidable.IncomingForm();
+  form.uploadDir = config.upload_path;
+  form.keepExtensions = true;
+
+  form.parse(req, function(err, fields, files) {
+    var new_news = new News(fields);
+    var thumb_name = files.thumbnail.path.split("\\").pop();
+    new_news.thumbnail = thumb_name;
+    new_news.save(function(err, news) {
+      if (err)
+        res.status(500).send(err);
+      res.json(news);
+    });
   });
 };
 

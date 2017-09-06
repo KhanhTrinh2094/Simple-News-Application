@@ -2,6 +2,7 @@
 var Config;
 (function (Config) {
     Config[Config["ApiUrl"] = "http://localhost:3003/"] = "ApiUrl";
+    Config[Config["UploadUrl"] = "http://localhost:3003/uploads"] = "UploadUrl";
 })(Config = exports.Config || (exports.Config = {}));
 var StatusCode;
 (function (StatusCode) {

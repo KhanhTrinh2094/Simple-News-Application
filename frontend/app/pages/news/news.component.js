@@ -30,13 +30,14 @@ let NewsComponent = class NewsComponent {
             "serverSide": true,
             "responsive": true,
             "columns": [
-                { "data": "_id" },
-                { "data": "title" },
                 { "data": "thumbnail" },
-                { "data": "category" },
-                { "data": "author" },
+                { "data": "title" },
+                { "data": "category.name" },
+                { "data": "author.name" },
+                { "data": "created_date" },
+                { "data": "_id" },
             ],
-            "columnDefs": [
+            "aoColumnDefs": [
                 {
                     "render": function (row, type, val, meta) {
                         return `<a onclick="routeLink('news/${val._id}');">
@@ -46,17 +47,24 @@ let NewsComponent = class NewsComponent {
               <button class="btn btn-danger">Delete</button>
             </a>`;
                     },
-                    "targets": 3,
+                    "targets": 5,
                     "orderable": false,
-                    "data": "_id",
                 },
                 {
-                    "width": "30%",
-                    "targets": [1, 2]
+                    "render": function (row, type, val, meta) {
+                        return `<img src="${raven_index_1.Config.UploadUrl}/${val.thumbnail}" style="width: 50px; height: 50px" />`;
+                    },
+                    "targets": 0,
+                    "orderable": false,
+                    "bVisible": false,
                 },
                 {
-                    "width": "10%",
-                    "targets": [3]
+                    "render": function (row, type, val, meta) {
+                        var d = new Date(val.created_date);
+                        console.log(d);
+                        return d.getDate() + '/' + d.getMonth() + '/' + d.getFullYear() + ' ' + d.getHours() + ':' + d.getMinutes();
+                    },
+                    "targets": 4
                 }
             ],
             "ajax": {

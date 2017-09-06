@@ -48,23 +48,19 @@ export class AddNewsComponent implements OnInit {
       this.fileValidate['err'].push("Thumbnail is required");
       this.fileValidate['stat'] = false;
     }
-    else if (this.thumbnail.type && typeof MediaMimeType[this.thumbnail.type] === 'undefined') {
+    else if (this.thumbnail[0].type && typeof MediaMimeType[this.thumbnail[0].type] === 'undefined') {
       this.fileValidate['err'].push("The selected file is not a valid image file");
       this.fileValidate['stat'] = false;
     } else if (this.news.isValid()) {
       this._loadingSvc.setValue(true);
       this.news.author = this.authService.getUser();
-      this.newsService.create(this.news).then(() => {
-
+      this.newsService.create(this.news, this.thumbnail).then((res) => {
         Notification.notySuccessMessage("Successfully created news with title: " + this.news.title);
         this._loadingSvc.setValue(false);
         this.router.navigate(['/news']);
-
-      }).catch(() => {
-
+      }).catch((res) => {
         this._loadingSvc.setValue(false);
         Notification.notyErrorMessage("News could not be created with received data.");
-        
       });
     }
   }

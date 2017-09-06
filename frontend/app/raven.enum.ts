@@ -1,6 +1,7 @@
 
 export enum Config {
-	ApiUrl = <any> "http://localhost:3003/"
+	ApiUrl = <any> "http://localhost:3003/",
+	UploadUrl = <any> "http://localhost:3003/uploads"
 }
 
 export enum StatusCode {
