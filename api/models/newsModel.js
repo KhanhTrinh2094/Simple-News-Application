@@ -18,6 +18,10 @@ var NewsSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'Categories'
   },
+  view_count: {
+    type: Number,
+    default: 0
+  },
   author: {
     type: Schema.Types.ObjectId,
     ref: 'Users'

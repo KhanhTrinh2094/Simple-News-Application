@@ -2,6 +2,7 @@ var newsModel = require('../models/newsModel.js');
 var News = newsModel.Schema('News').model;
 var formidable = require('formidable');
 var config = require('../config');
+var path = require("path");
 
 exports.list_all_news = function(req, res) {
   News.find({}, function(err, news) {
@@ -26,8 +27,9 @@ exports.create_a_news = function(req, res) {
 
   form.parse(req, function(err, fields, files) {
     var new_news = new News(fields);
-    var thumb_name = files.thumbnail.path.split("\\").pop();
+    var thumb_name = files.thumbnail.path.split(path.sep).pop();
     new_news.thumbnail = thumb_name;
+    new_news.view_count = 0;
     new_news.save(function(err, news) {
       if (err)
         res.status(500).send(err);
@@ -52,7 +54,7 @@ exports.update_a_news = function(req, res) {
   form.parse(req, function(err, fields, files) {
     var new_news = new News(fields);
     if(files.thumbnail){
-      var thumb_name = files.thumbnail.path.split("\\").pop();
+      var thumb_name = files.thumbnail.path.split(path.sep).pop();
       new_news.thumbnail = thumb_name;
     }
     News.findOneAndUpdate({_id: req.params.newsId}, new_news, {new: true}, function(err, news) {

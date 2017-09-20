@@ -51,7 +51,7 @@ export class NewsComponent implements OnInit {
         },
         {
           "render": function(row: any, type: any, val: any, meta: any) {
-            return `<img src="${Config.UploadUrl}/${val.thumbnail}" style="width: 50px; height: 50px" />`;
+            return `<img src="${Config.UploadUrl}/${val.thumbnail}" style="width: 80px; height: 50px" />`;
           },
           "targets": 0,
           "orderable": false,

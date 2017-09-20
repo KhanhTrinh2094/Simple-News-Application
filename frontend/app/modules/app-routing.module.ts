@@ -18,7 +18,7 @@ import {
 const routes: Routes = [
 	{
 		path: '', children: [
-			{ path: '', component: DashboardComponent, canActivate: [AuthGuard] },
+			{ path: '', redirectTo: 'users', pathMatch: 'full', canActivate: [AuthGuard] },
 			{ path: 'users', component: UserComponent, canActivate: [AuthGuard] },
 			{ path: 'user/add-new', component: AddUserComponent, canActivate: [AuthGuard] },
 			{ path: 'user/:id', component: UpdateUserComponent, canActivate: [AuthGuard] },
