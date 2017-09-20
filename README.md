@@ -18,8 +18,8 @@ Pet Project nhằm mục đích sử dụng thuần thục NodeJS, Angular 4, Re
 <p align="center"> 
   <a href="https://youtu.be/N5VgMAeRd-U"><img src="https://i.imgur.com/GhzycOY.png" /></a>
 </p>
-[![Demo](https://i.imgur.com/GhzycOY.png)](https://youtu.be/N5VgMAeRd-U "Demo")
 
 ### Admin Manager
-[![Demo](https://i.imgur.com/sls3LBO.png)](https://youtu.be/Fal0rHmKBpg "Demo")
-
+<p align="center"> 
+  <a href="https://youtu.be/Fal0rHmKBpg"><img src="https://i.imgur.com/sls3LBO.png" /></a>
+</p>
