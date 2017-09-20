@@ -9,7 +9,9 @@ Pet Project nhằm mục đích sử dụng thuần thục NodeJS, Angular 4, Re
   - Mobile App : nhận, show thông tin được nhập bởi admin manager thông qua API, sử dụng React Native (Demo)
 
 ## Mô hình
+<p align="center"> 
 ![Mô hình](http://www.bizcoder.com/Media/Bizcoder/Windows-Live-Writer/36cb1b349d6d_C721/image_2.png)
+</p>
 
 ## Video
 ### Android APP
