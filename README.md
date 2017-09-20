@@ -12,6 +12,9 @@ Pet Project nhằm mục đích sử dụng thuần thục NodeJS, Angular 4, Re
 ![Mô hình](http://www.bizcoder.com/Media/Bizcoder/Windows-Live-Writer/36cb1b349d6d_C721/image_2.png)
 
 ## Video
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Fal0rHmKBpg" frameborder="0" allowfullscreen></iframe>
-[![Demo](https://i.ytimg.com/vi/Fal0rHmKBpg/hqdefault.jpg)](https://youtu.be/Fal0rHmKBpg "Demo")
-[![Demo](https://i.ytimg.com/vi/N5VgMAeRd-U/hqdefault.jpg)](https://youtu.be/N5VgMAeRd-U "Demo")
+### Android APP
+[![Demo](https://i.imgur.com/GhzycOY.png)](https://youtu.be/N5VgMAeRd-U "Demo")
+
+### Admin Manager
+[![Demo](https://i.imgur.com/sls3LBO.png)](https://youtu.be/Fal0rHmKBpg "Demo")
+
