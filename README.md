@@ -1,5 +1,5 @@
 # Simple-News-Application
-<a href="https://news-backend-vn.herokuapp.com/public/list_all_news" target="_blank">API Demo</a> - <a href="https://news-frontend-vn.herokuapp.com/" target="_blank">Admin Manager</a> - <a href="https://drive.google.com/file/d/0B_bPLCdGUTI8aGt0QTQyZ2VJM0U/view" target="_blank">Android APP</a>
+<a href="https://news-backend-vn.herokuapp.com/public/list_all_news" target="_blank">API Demo</a> - <a href="https://news-frontend-vn.herokuapp.com/" target="_blank">Admin Manager</a> (admin/123456) - <a href="https://drive.google.com/file/d/0B_bPLCdGUTI8aGt0QTQyZ2VJM0U/view" target="_blank">Android APP</a>
 
 ## Giới thiệu
 Pet Project ứng dụng NodeJS, Angular 4 và React Native.
