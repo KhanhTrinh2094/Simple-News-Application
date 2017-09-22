@@ -4,9 +4,9 @@
 ## Introduce
 Pet Project application NodeJS, Angular 4 and React Native. The application consists of 3 parts
 
-API: using NodeJS (<a href="https://news-backend-vn.herokuapp.com/public/list_all_news" target="_blank">Demo</a>)
-Admin manager: input, manage information - using Angular 4 (<a href="https://news-frontend-vn.herokuapp.com/" target="_blank">Demo</a>)
-Mobile App: get and show information input by admin manager via API - using React Native (<a href="https://drive.google.com/file/d/0B_bPLCdGUTI8aGt0QTQyZ2VJM0U/view" target="_blank">Demo</a>).
+- API: using NodeJS (<a href="https://news-backend-vn.herokuapp.com/public/list_all_news" target="_blank">Demo</a>)
+- Admin manager: input, manage information - using Angular 4 (<a href="https://news-frontend-vn.herokuapp.com/" target="_blank">Demo</a>)
+- Mobile App: get and show information input by admin manager via API - using React Native (<a href="https://drive.google.com/file/d/0B_bPLCdGUTI8aGt0QTQyZ2VJM0U/view" target="_blank">Demo</a>).
 
 ## Model
 <p align="center"> 
